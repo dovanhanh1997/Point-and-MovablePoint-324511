@@ -3,8 +3,8 @@
 
 class Point2D
 {
-    protected $x = 0.0;
-    protected $y = 0.0;
+    protected $x;
+    protected $y;
     protected $array = [];
 
     public function __construct($x, $y)
@@ -13,28 +13,8 @@ class Point2D
         $this->y = $y;
     }
 
-    public function Point2D(){
-        echo 'Image have X position:'.$this->x.' '.'Y position: '.$this->y;
-    }
-
     /**
-     * @return float
-     */
-    public function getX()
-    {
-        return $this->x;
-    }
-
-    /**
-     * @return float
-     */
-    public function getY()
-    {
-        return $this->y;
-    }
-
-    /**
-     * @param float $x
+     * @param mixed $x
      */
     public function setX($x)
     {
@@ -42,18 +22,35 @@ class Point2D
     }
 
     /**
-     * @param float $y
+     * @param mixed $y
      */
     public function setY($y)
     {
         $this->y = $y;
     }
 
-    public function setXY($x,$y){
-        $this->x=$x;
-        $this->y=$y;
-        $this->array[0] = $x;
-        $this->array[1] = $y;
+    /**
+     * @return mixed
+     */
+    public function getX()
+    {
+        return $this->x;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getY()
+    {
+        return $this->y;
+    }
+
+    public function setXY($x, $y)
+    {
+        $this->x = $x;
+        $this->y = $y;
+        array_push($this->array,$this->x);
+        array_push($this->array,$this->y);
     }
 
     public function getXY(){
@@ -61,9 +58,7 @@ class Point2D
     }
 
     public function toString(){
-        return 'Position X: '.$this->x .'<br>'.'Position Y:'.$this->y;
+        return 'X position: '.$this->getX().'<br>'.'Y Position: '.$this->getY();
     }
-
-
 
 }
