@@ -1,15 +1,12 @@
 <?php
 include_once 'MovablePoint.php';
 
-$movablePoint=new MovablePoint(51,15);
-?>
-Before Move <br>
-<?php
-echo $movablePoint->toString().'<br><br>';
-$movablePoint->setSpeed(rand(1,100),rand(1,100));
-?>
+$movablePoint = new MovablePoint(20,25);
+echo 'Before Move <br>';
+echo $movablePoint;
 
-After Move <br>
-<?php
-echo $movablePoint->toString();
+echo '<br><br> ';
 
+echo 'After Move <br>';
+$movablePoint->setXYSpeed(20,20);
+echo $movablePoint;

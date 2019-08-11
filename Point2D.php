@@ -1,6 +1,5 @@
 <?php
 
-
 class Point2D
 {
     protected $x;
@@ -13,52 +12,49 @@ class Point2D
         $this->y = $y;
     }
 
-    /**
-     * @param mixed $x
-     */
-    public function setX($x)
+    public function getY()
     {
-        $this->x = $x;
+        return $this->y;
     }
 
-    /**
-     * @param mixed $y
-     */
-    public function setY($y)
-    {
-        $this->y = $y;
-    }
 
-    /**
-     * @return mixed
-     */
     public function getX()
     {
         return $this->x;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getY()
+
+    public function getArray()
     {
-        return $this->y;
+        return $this->array;
+    }
+
+
+    public function setY($y)
+    {
+        $this->y = $y;
+    }
+
+    public function setX($x)
+    {
+        $this->x = $x;
     }
 
     public function setXY($x, $y)
     {
         $this->x = $x;
         $this->y = $y;
-        array_push($this->array,$this->x);
-        array_push($this->array,$this->y);
+        array_push($this->array, $this->x);
+        array_push($this->array, $this->y);
     }
 
-    public function getXY(){
+    public function getXY()
+    {
         return $this->array;
     }
 
-    public function toString(){
-        return 'X position: '.$this->getX().'<br>'.'Y Position: '.$this->getY();
+    public function __toString()
+    {
+        return 'X position: ' . $this->getX() . '<br>' . 'Y position: ' . $this->getY();
     }
-
 }
